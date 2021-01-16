@@ -1,0 +1,24 @@
+﻿@model Anspeamiaincercareplusunu.Models.Forum
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editare Forum</h2>
+
+<form method="post" action="/Forums/Edit/@Model.Id">
+
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    @Html.HiddenFor(m => m.Id)
+
+    @Html.Label("Title", "Denumire Forum")
+    <br/>
+    @Html.EditorFor(m => m.Title)
+    <br /><br />
+    @Html.Label("Desc", "Descrierea forumului")
+    <br />
+    @Html.EditorFor(m => m.Description)
+
+    <button class="btn btn-success" type="submit">Modifica forumul</button>
+</form>
+

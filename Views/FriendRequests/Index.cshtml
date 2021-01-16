@@ -1,0 +1,15 @@
+﻿@model Anspeamiaincercareplusunu.Models.FriendRequest
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <h2> Cereri de Prietenie </h2>
+
+    <br />
+    @Html.ActionLink("Add Friend", "AddFriend", "FriendRequests",  new { @class = "btn btn-primary" })
+    <br />
+    <hr />
+}

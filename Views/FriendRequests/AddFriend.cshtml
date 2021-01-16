@@ -1,0 +1,33 @@
+﻿@model Anspeamiaincercareplusunu.Models.FriendRequest
+
+@{
+    ViewBag.Title = "AddFriend";
+}
+
+
+@using (Html.BeginForm())
+{
+    <h2>Adauga Prieteni</h2>
+    <div class="form-group">
+        @Html.LabelFor(x => x.ReceiverId, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(x => x.ReceiverId, new { @class = "form-control" })
+            <br /><br>
+            @Html.ValidationMessageFor(x => x.ReceiverId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.FriendRequestStatus, new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(x => x.FriendRequestStatus, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.FriendRequestStatus, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </div>
+    </div> 
+
+}

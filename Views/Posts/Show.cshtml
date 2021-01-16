@@ -1,0 +1,84 @@
+﻿@model Anspeamiaincercareplusunu.Models.Post
+
+@{
+    ViewBag.Title = "Show";
+}
+<br />
+
+
+<div class="panel panel-default">
+    @Html.Partial("_PostsInfo", Model)
+    @if (ViewBag.afisareButoane == true && Model.UserId == ViewBag.utilizatorCurent || ViewBag.esteAdmin)
+    {
+        <div class="panel-footer">
+            <a class="btn btn-primary pull-left" href="/Posts/Edit/@Model.Id">Modifica Postarea</a>
+
+            @using (Html.BeginForm(actionName: "Delete", controllerName: "Posts"))
+            {
+                @Html.Hidden("Id")
+                @Html.HttpMethodOverride(HttpVerbs.Delete)
+                <button class="btn btn-danger pull-right" type="submit">Șterge Postare</button>
+            }
+
+            <div class="clearfix"></div>
+        </div>
+    }
+</div>
+
+<br />
+@*
+
+    @foreach (var postReply in Model.PostReplies)
+    {<div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div>
+                        <p>@postReply.Content</p>
+                        <small class="pull-right">@postReply.Created</small>
+                        <i class="glyphicon glyphicon-user"></i> <i> scris de </i> <strong> @postReply.UserId</strong>
+                    </div>
+                    @if (postReply.UserId == ViewBag.utilizatorCurent || ViewBag.esteAdmin)
+                    {
+                        <div style="display: inline-block; float : left; margin-right: 15px">
+                            <a class="glyphicon glyphicon-pencil" href="/Posts/Edit/@postReply.Id"></a>
+                        </div>
+                        <div style="display: inline-block; float : left">
+                            <form method="post" action="/PostReplies/Delete/@postReply.Id">
+                                @Html.HttpMethodOverride(HttpVerbs.Delete)
+                                <button class="glyphicon glyphicon-trash" style="border: none; background: transparent" type="submit">Șters</button>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <hr />
+    }
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div class="panel">
+                <form method="post" action="/Posts/Show/@Model.Id">
+                    <div class="panel-body">
+                        <input type="hidden" name="Id" value="@Model.Id" />
+                        <label>Continut Postare</label>
+                        <br />
+                        <textarea class="form-control" name="Content"></textarea>
+                        @Html.ValidationMessage("Content", "", new { @class = "text-danger" })
+                        <br />
+                        <button class="btn btn-success " type="submit">Adauga raspuns</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+    *@

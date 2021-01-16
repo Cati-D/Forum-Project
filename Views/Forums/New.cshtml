@@ -1,0 +1,16 @@
+﻿@model Anspeamiaincercareplusunu.Models.Forum
+
+<h2>New</h2>
+
+<form method="post" action="/Forums/New">
+    @Html.Label("Titlu", "Titlu forumului")
+    <br />
+    @Html.TextBox("Title", null, new { })
+    @Html.ValidationMessageFor(m => m.Title, null, new { @class = "text-danger" })
+    <br /><br />
+    @Html.Label("Desc", "Descrierea forumului")
+    <br />
+    @Html.TextBox("Description", null, new { })
+    <br /><br />
+    <button class="btn btn-primary">Adauga forum</button>
+</form>

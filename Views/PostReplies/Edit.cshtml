@@ -1,0 +1,17 @@
+﻿@model Anspeamiaincercareplusunu.Models.PostReply
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editare raspuns</h2>
+<form method="post" action="/PostReplies/Edit/@Model.Id">
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    <label>Continut comentariu</label>
+    <br />
+    <textarea name="Content">@Model.Content</textarea>
+    <br />
+    <button class="btn btn-success" type="submit">Editeaza comentariu</button>
+</form>
+
+

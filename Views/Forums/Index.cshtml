@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> Forumuri </h2>
+
+@foreach (var forum in ViewBag.Forums)
+{
+    <p>@forum.Title</p>
+    <p>@forum.Description</p>
+    <div class="panel-footer">
+        <a class="btn btn-sm btn-success full-width" href="/Posts/Index">Vezi Postari Forum</a>
+    </div> <hr />
+}

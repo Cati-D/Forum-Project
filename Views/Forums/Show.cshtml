@@ -1,0 +1,13 @@
+﻿@model Anspeamiaincercareplusunu.Models.Forum
+@{
+    ViewBag.Title = "Afisare Forum";
+}
+
+<h2>@Model.Title</h2>
+
+<form method="="post" action="/Forums/Delete/@Model.Id">
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+
+    <button class=" = "btn btn-success" type="submit">Sterge Forum</button>
+</form>
+
